@@ -41,7 +41,7 @@ def call(cmd, args):
     # run command
     if DEBUG_CALLS:
         sys.stderr.write("executing: " + " ".join(cmd) + "\n")
-    subprocess.check_call(cmd)
+    subprocess.check_call(cmd, env={"PATH": "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"})
 
 
 def nsexec(cmd, args=()):
